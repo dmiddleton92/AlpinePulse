@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "inquirer": "^12.4.1",
+    "pg": "^8.13.2",
+    "postgres": "^3.4.5",
+    "typescript": "^5.7.3"
+  }
+}
