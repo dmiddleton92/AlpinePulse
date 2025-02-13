@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.21.2",
     "inquirer": "^12.4.1",
     "pg": "^8.13.2",
     "postgres": "^3.4.5",
