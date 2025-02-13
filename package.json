@@ -1,9 +1,27 @@
-{
+{ 
+  "name": "alpinepulse",
+  "version": "1.0.0",
+  "description": "A CLI tool that utilizes the pg db to manage a company's employee database (alpinepulse)",
+"type":"module",
+  "main": "server.js",
+  "scripts": {
+      "build": "tsc",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node dist/server.js"
+  },
   "dependencies": {
-    "express": "^4.21.2",
-    "inquirer": "^12.4.1",
-    "pg": "^8.13.2",
-    "postgres": "^3.4.5",
-    "typescript": "^5.7.3"
+      "dotenv": "^16.4.5",
+      "express": "^4.17.1",
+      "inquirer": "^12.0.1",
+      "pg": "^8.11.3",
+      "@dotenvx/dotenvx": "1.22.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/express": "^4.17.21",
+      "@types/pg": "^8.11.6",
+      "typescript": "^5.2.2"
+    }
   }
-}
