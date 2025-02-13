@@ -26,4 +26,8 @@ function addDepartment(): void {
             pool.querey('INSERT INTO department (name) VALUES ('${response.addDepartment})', (err: Error, result: QueryResult) => {
                 if (err) throw err;
                 console.log('Department added successfully!');
-        
+        });
+        allDepartmentNames.push(response.addDepartment);
+        startCli();
+    });
+}
