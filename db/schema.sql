@@ -10,7 +10,7 @@ CREATE TABLE departments (
 
 CREATE TABLE roles (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
+    title VARCHAR(30) NOT NULL,
     salary INTEGER NOT NULL,
     department_id INT,
     FOREIGN KEY (department_id) REFERENCES departments (id)
@@ -18,10 +18,10 @@ CREATE TABLE roles (
 
 CREATE TABLE employees (
     id SERIAL PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
-    role_title INT,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INT,
     manager_id INT,
-    FOREIGN KEY (role_title) REFERENCES roles (title),
+    FOREIGN KEY (role_id) REFERENCES roles (id),
     FOREIGN KEY (manager_id) REFERENCES employees (id)
 );

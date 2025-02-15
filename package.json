@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A CLI tool that utilizes the pg db to manage a company's employee database (alpinepulse)",
 "type":"module",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
       "build": "tsc",
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node dist/server.js"
+      "start": "npm run build && node dist/index.js",
+      "seeds": "psql -U postgres -f db/schema.sql && psql -U postgres -d alpinepulse_db -f db/seeds.sql"
   },
   "dependencies": {
       "dotenv": "^16.4.5",
