@@ -68,7 +68,7 @@ function mainMenu() {
                 {
                     type: 'input',
                     name: 'manager_id',
-                    message: 'What is the employee\'s manager ID?'
+                    message: 'Who is the employees manager?'
                 }
             ]).then((answers) => {
                 console.log(answers);
@@ -128,6 +128,26 @@ function mainMenu() {
         }
         else if (answers.choice === 'Update an employee role') {
             console.log('Updating an employee role...');
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'employee_id',
+                    message: 'What is the ID of the employee whose role you would like to update?'
+                },
+                {
+                    type: 'input',
+                    name: 'new_role_id',
+                    message: 'What is the new role ID?'
+                }
+            ]).then((answers) => {
+                console.log(answers);
+                pool.query('UPDATE employees SET role_id = $1 WHERE id = $2', [answers.new_role_id, answers.employee_id], (err) => {
+                    if (err)
+                        throw err;
+                    console.log('Employee role updated.');
+                    mainMenu();
+                });
+            });
         }
         else {
             console.log('Quitting...');
