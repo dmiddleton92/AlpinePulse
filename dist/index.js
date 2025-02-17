@@ -150,7 +150,21 @@ function mainMenu() {
             });
         }
         else {
-            console.log('Quitting...');
+            inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'quit',
+                    message: 'Are you sure you want to quit?'
+                }
+            ]).then((answers) => {
+                if (answers.quit) {
+                    console.log('Quitting...');
+                    process.exit(0);
+                }
+                else {
+                    mainMenu();
+                }
+            });
         }
     });
 }

@@ -151,12 +151,11 @@ function mainMenu() {
             ]).then((answers) => {
                 if (answers.quit) {
                     console.log('Quitting...');
-                    pool.end();
+                    process.exit(0);
                 } else {
                     mainMenu();
                 }
             });
-            console.log('Quitting...');
         }
     });
 }
